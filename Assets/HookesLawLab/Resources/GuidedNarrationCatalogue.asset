@@ -1,0 +1,237 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba5544929d569a4a808ebb5b67f1847, type: 3}
+  m_Name: GuidedNarrationCatalogue
+  m_EditorClassIdentifier: 
+  entries:
+  - id: welcome
+    clip: {fileID: 8300000, guid: b1411d8f140636e489bd1ecef8759e42, type: 3}
+    subtitle: Welcome to the Virtual Physics Lab. Today, we will explore Hooke's
+      Law and discover how a spring stretches when we add weight. Look around, then
+      use point teleportation to move towards the experiment table.
+    language: en
+    priority: 1
+    replayRule: 1
+    minCooldownSeconds: 3
+    fallbackDurationSeconds: 14.28
+  - id: movement
+    clip: {fileID: 8300000, guid: a07e2c3576f175149a17b15e220dfa4d, type: 3}
+    subtitle: Point your thumbstick forward toward the floor and release when the
+      teleport path turns blue-cyan to move to the experiment table.
+    language: en
+    priority: 1
+    replayRule: 0
+    minCooldownSeconds: 3
+    fallbackDurationSeconds: 8.82
+  - id: apparatus
+    clip: {fileID: 8300000, guid: cb0310f51b3034c46b4e37d12aa1135f, type: 3}
+    subtitle: This is the spring experiment. You can attach different masses, measure
+      the spring's extension, and record your results. Select Earth's gravity to
+      begin.
+    language: en
+    priority: 1
+    replayRule: 0
+    minCooldownSeconds: 3
+    fallbackDurationSeconds: 9.66
+  - id: hookes_law
+    clip: {fileID: 8300000, guid: f86cccffc6fa41745b34ceb951eeb2f9, type: 3}
+    subtitle: 'Hooke''s Law states that a spring''s restoring force is proportional
+      to its extension within its elastic limit: F equals minus k x.'
+    language: en
+    priority: 1
+    replayRule: 0
+    minCooldownSeconds: 3
+    fallbackDurationSeconds: 9.24
+  - id: pickup_prompt
+    clip: {fileID: 8300000, guid: 9de442af68dd72a41adc5352eed0be50, type: 3}
+    subtitle: Pick up a weight using the grip button on your controller. Start with
+      the smallest available mass.
+    language: en
+    priority: 1
+    replayRule: 0
+    minCooldownSeconds: 3
+    fallbackDurationSeconds: 7.14
+  - id: pickup_success
+    clip: {fileID: 8300000, guid: 9d68d894a2b6cd9469ef6eda7188a667, type: 3}
+    subtitle: Move the weight towards the spring's attachment point. Release it when
+      it is inside the attachment area.
+    language: en
+    priority: 2
+    replayRule: 0
+    minCooldownSeconds: 3
+    fallbackDurationSeconds: 7.14
+  - id: attach_prompt
+    clip: {fileID: 8300000, guid: 0eb76930dc62b0c4ca5ad3b5e7787f3b, type: 3}
+    subtitle: The weight is inside the attachment area. Release the grip button to
+      attach it to the spring.
+    language: en
+    priority: 2
+    replayRule: 3
+    minCooldownSeconds: 2.5
+    fallbackDurationSeconds: 7.14
+  - id: attach_success
+    clip: {fileID: 8300000, guid: 31b60e5a451adb041a87ead427339fa1, type: 3}
+    subtitle: Well done. The weight pulls the spring down. Wait for the spring to
+      settle before taking a measurement.
+    language: en
+    priority: 2
+    replayRule: 0
+    minCooldownSeconds: 3
+    fallbackDurationSeconds: 7.56
+  - id: return_to_table
+    clip: {fileID: 8300000, guid: ab1057cd444661541987a3443a0f38b5, type: 3}
+    subtitle: The weight returned to the table. Pick it up again using the grip button,
+      hold it in the attachment area, and release.
+    language: en
+    priority: 1
+    replayRule: 3
+    minCooldownSeconds: 3
+    fallbackDurationSeconds: 9.24
+  - id: equilibrium
+    clip: {fileID: 8300000, guid: a5263c7a72f7dfa4d845654ab3f2b854, type: 3}
+    subtitle: Wait for the oscillation to settle, or select Settle Spring for static
+      equilibrium.
+    language: en
+    priority: 1
+    replayRule: 0
+    minCooldownSeconds: 3
+    fallbackDurationSeconds: 5.46
+  - id: record_prompt
+    clip: {fileID: 8300000, guid: 0635e7d7cb6f3844e94b2777a607309d, type: 3}
+    subtitle: Now observe the extension reading. Extension is the increase in length
+      from the spring's unloaded position. Select Record Point to save your measurement.
+    language: en
+    priority: 1
+    replayRule: 0
+    minCooldownSeconds: 3
+    fallbackDurationSeconds: 9.66
+  - id: record_success
+    clip: {fileID: 8300000, guid: 6ad1e050a4b5c7e4d802a23954d1b3a0, type: 3}
+    subtitle: Your measurement has been recorded. Detach the weight to return it
+      to the table, then try a different mass. Keep the gravity and spring stiffness
+      unchanged while comparing your results.
+    language: en
+    priority: 2
+    replayRule: 0
+    minCooldownSeconds: 3
+    fallbackDurationSeconds: 12.599999
+  - id: record_rejected_moving
+    clip: {fileID: 8300000, guid: 2f0b9499e99aa924a89607844ed07c95, type: 3}
+    subtitle: Recording failed because the spring is still oscillating. Wait for
+      equilibrium or select Settle Spring, then record again.
+    language: en
+    priority: 2
+    replayRule: 3
+    minCooldownSeconds: 2.5
+    fallbackDurationSeconds: 7.56
+  - id: record_rejected_empty
+    clip: {fileID: 8300000, guid: 11e2916ea928c6140a4b67d722300a09, type: 3}
+    subtitle: Recording failed because no mass is attached. Attach a weight and let
+      the spring settle before recording.
+    language: en
+    priority: 2
+    replayRule: 3
+    minCooldownSeconds: 2.5
+    fallbackDurationSeconds: 7.14
+  - id: try_different_loads
+    clip: {fileID: 8300000, guid: 27443849e41a75541b0026bd72c9cca7, type: 3}
+    subtitle: Detach the current weight, attach another mass, and record at least
+      three different total masses at the same gravity and spring stiffness.
+    language: en
+    priority: 1
+    replayRule: 0
+    minCooldownSeconds: 3
+    fallbackDurationSeconds: 9.24
+  - id: graph_explanation
+    clip: {fileID: 8300000, guid: 68bb519f0386eb44eb017d94d7f21593, type: 3}
+    subtitle: Look at the force-extension graph. Within the elastic limit, greater
+      force produces greater extension. For force plotted vertically against extension
+      horizontally, the slope represents the spring constant.
+    language: en
+    priority: 1
+    replayRule: 0
+    minCooldownSeconds: 3
+    fallbackDurationSeconds: 11.339999
+  - id: gravity_prompt
+    clip: {fileID: 8300000, guid: 43246695f824451478fd8528bcccd688, type: 3}
+    subtitle: Now keep the same mass attached and select another planet. Compare
+      how the spring's extension changes with gravity.
+    language: en
+    priority: 1
+    replayRule: 0
+    minCooldownSeconds: 3
+    fallbackDurationSeconds: 7.56
+  - id: gravity_earth
+    clip: {fileID: 8300000, guid: 6bc8c906a8e2b2b428b42e62a4675f3a, type: 3}
+    subtitle: Earth's gravity is selected. Observe the spring's extension.
+    language: en
+    priority: 2
+    replayRule: 2
+    minCooldownSeconds: 1.5
+    fallbackDurationSeconds: 3.36
+  - id: gravity_moon
+    clip: {fileID: 8300000, guid: 665e2b618446d874fa9b885148c328da, type: 3}
+    subtitle: The Moon has weaker gravity than Earth. With the same mass and spring
+      stiffness, the equilibrium extension is smaller.
+    language: en
+    priority: 2
+    replayRule: 2
+    minCooldownSeconds: 1.5
+    fallbackDurationSeconds: 7.9799995
+  - id: gravity_mars
+    clip: {fileID: 8300000, guid: 5081158fa5b24d842aad5d6a55182acb, type: 3}
+    subtitle: Mars has weaker gravity than Earth. With the same mass and spring stiffness,
+      the equilibrium extension is smaller.
+    language: en
+    priority: 2
+    replayRule: 2
+    minCooldownSeconds: 1.5
+    fallbackDurationSeconds: 7.56
+  - id: gravity_jupiter
+    clip: {fileID: 8300000, guid: 38466c7dbd5d46a4783e6469b751c202, type: 3}
+    subtitle: Jupiter has stronger gravity than Earth. With the same mass and spring
+      stiffness, the predicted extension is larger, provided the spring remains within
+      its elastic range.
+    language: en
+    priority: 2
+    replayRule: 2
+    minCooldownSeconds: 1.5
+    fallbackDurationSeconds: 10.92
+  - id: elastic_limit
+    clip: {fileID: 8300000, guid: d8400c1de14890c49b12ae7decceb5fd, type: 3}
+    subtitle: The extension has exceeded the experiment's elastic-limit threshold.
+      Reduce the load so the spring stays within its elastic range.
+    language: en
+    priority: 3
+    replayRule: 3
+    minCooldownSeconds: 5
+    fallbackDurationSeconds: 7.9799995
+  - id: teacher_help
+    clip: {fileID: 8300000, guid: cb83bd4190c58f74bbdeb22b6e324d39, type: 3}
+    subtitle: You can now visit the virtual teacher to ask questions about Hooke's
+      Law. You can also read the theory board and select YouTube to watch the linked
+      educational video.
+    language: en
+    priority: 1
+    replayRule: 0
+    minCooldownSeconds: 3
+    fallbackDurationSeconds: 12.179999
+  - id: completion
+    clip: {fileID: 8300000, guid: a730c867bab0b0a41a63bccf4c36a67b, type: 3}
+    subtitle: You have completed the guided experiment. You explored how mass and
+      gravity affect spring extension and recorded your results. You can continue
+      experimenting and exploring the laboratory.
+    language: en
+    priority: 2
+    replayRule: 0
+    minCooldownSeconds: 3
+    fallbackDurationSeconds: 11.339999
